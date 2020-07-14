@@ -11,6 +11,5 @@ def predict(tweets):
         tweet = clean(tweet)
         tokenized = analyze(tweet)
         _tweets.append(tokenized)
-        # print(tokenized)
     encoded = encode_tweets(_tweets, traffic_keywords)
     return model.predict_classes(encoded, verbose=0)

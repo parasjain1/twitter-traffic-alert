@@ -42,6 +42,7 @@ if __name__ == '__main__':
         .load()
 
     console_output = df.select(to_string_value("value"), prediction("value").alias("prediction")) \
+        .show(df.count(), False) \
         .writeStream \
         .outputMode("append") \
         .format("console")  \
